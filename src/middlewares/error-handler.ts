@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from "express";
+
 import { BaseError } from "../errors/base-error";
 
-const errorHandler = (
+export const errorHandler = (
   err: Error,
   _req: Request,
   res: Response,
@@ -13,5 +14,3 @@ const errorHandler = (
 
   res.status(400).send({ errors: [{ message: "Something went wrong" }] });
 };
-
-export default errorHandler;
